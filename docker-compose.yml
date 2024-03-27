@@ -11,6 +11,7 @@ services:
       - POSTGRES_USE=lesson
       - POSTGRES_PASSWORD=lesson
       - POSTGRES_DATABASE=lesson
+            - DATABASE_SYNCHRONIZE
     command: postgres
     restart: always
 
