@@ -18,12 +18,12 @@ import { SequelizeModule } from '@nestjs/sequelize';
     ],
     inject: [ConfigService],
     useFactory: (configService: ConfigService) => ({
-      dialect: 'postgres',
-      port: configService.get('db_port'),
-      name: configService.get('db_name'),
-      user: configService.get('db_user'),
-      password: configService.get('db_password'),
+      dialect: "postgres",
       host: configService.get('db_host'),
+      port: configService.get('db_port'),
+      username: configService.get('db_user'),
+      password: configService.get('db_password'),
+      database: configService.get('db_name'),
       synchronize: true,
       autoLoadModels: true,
       models: []
